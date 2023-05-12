@@ -1,0 +1,20 @@
+Person(user, "User of the standard operating environment")
+
+System(standard_operating_environment, "Standard Operating Environment")
+
+Container(os, "Operating System", "Provides the basic services for the standard operating environment")
+Container(services, "Services", "Provides additional services and functionality for the standard operating environment")
+
+Component(system_libs, "System Libraries", "Provides the basic system libraries for the operating system container")
+Component(networking, "Networking", "Provides network-related services for the services container")
+Component(logging, "Logging", "Provides logging functionality for the services container")
+
+Relate(user, standard_operating_environment, "Uses")
+
+Relate(standard_operating_environment, os, "Runs on")
+Relate(standard_operating_environment, services, "Runs on")
+
+Relate(os, system_libs, "Uses")
+Relate(services, networking, "Uses")
+Relate(services, logging, "Uses")
+
